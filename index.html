@@ -32,11 +32,6 @@
                             light: '#E6C665',
                             DEFAULT: '#D4AF37',
                             dark: '#C5A059',
-                        },
-                        blushPink: {
-                            100: '#FDF2F7',
-                            300: '#F3C5D8',
-                            500: '#E8A0BF',
                         }
                     },
                     fontFamily: {
@@ -66,43 +61,12 @@
             backdrop-filter: blur(12px);
             border: 1px solid rgba(212, 175, 55, 0.2);
         }
-
-        .shimmer-effect {
-            position: relative;
-            overflow: hidden;
-        }
-        .shimmer-effect::after {
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(
-                60deg,
-                transparent 0%,
-                rgba(255, 255, 255, 0.25) 50%,
-                transparent 100%
-            );
-            transform: rotate(30deg);
-            animation: shimmer 6s infinite;
-            content: '';
-        }
-
-        @keyframes shimmer {
-            0% { transform: translateX(-100%) rotate(30deg); }
-            100% { transform: translateX(100%) rotate(30deg); }
-        }
     </style>
 </head>
 <body class="bg-creamBrand-100 text-gray-800 font-sans antialiased bg-watermark min-h-screen flex flex-col justify-between selection:bg-emeraldBrand-800 selection:text-goldBrand">
 
+    <!-- WATERMARK BACKGROUND -->
     <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden opacity-25">
-        <svg class="absolute -top-10 -right-20 w-96 h-96 text-emeraldBrand-800 opacity-20" fill="currentColor" viewBox="0 0 100 100">
-            <path d="M50 0 C60 20, 80 30, 100 30 C80 50, 80 80, 50 100 C40 70, 20 60, 0 60 C30 40, 30 10, 50 0 Z"></path>
-        </svg>
-        <svg class="absolute top-1/3 -left-10 w-72 h-72 text-goldBrand opacity-15 animate-pulse" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12,2C12,2 10.5,6.5 8,8C5.5,9.5 2,8 2,12C2,16 6,17.5 8,16C10,14.5 11.5,13 12,13C12.5,13 14,14.5 16,16C18,17.5 22,16 22,12C22,8 18.5,9.5 16,8C13.5,6.5 12,2 12,2Z"/>
-        </svg>
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border-[18px] border-emeraldBrand-800/5 flex items-center justify-center">
             <span class="font-serif text-[120px] font-bold text-emeraldBrand-800/5 tracking-widest">SIYAMS</span>
         </div>
@@ -113,47 +77,23 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20 sm:h-24">
                 
-                <!-- Brand Badge Logo -->
                 <a href="#" class="flex items-center gap-3 group">
                     <div class="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-emeraldBrand-800 p-1 ring-2 ring-goldBrand shadow-md group-hover:scale-105 transition-transform duration-300 flex items-center justify-center">
-                        <svg class="w-full h-full" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="100" cy="100" r="95" stroke="#D4AF37" stroke-width="4" fill="#133E2B"/>
-                            <circle cx="100" cy="100" r="85" fill="#F9F6EE"/>
-                            <circle cx="100" cy="100" r="80" stroke="#133E2B" stroke-width="2" stroke-dasharray="4 2"/>
-                            <path d="M100 45 C105 35 120 35 120 48 C120 58 105 60 100 65 C95 60 80 58 80 48 C80 35 95 35 100 45 Z" fill="#D4AF37"/>
-                            <path d="M100 65 C108 60 125 70 115 80 C105 85 100 70 100 65 Z" fill="#C5A059"/>
-                            <text x="100" y="115" font-family="'Great Vibes', cursive" font-size="48" font-weight="bold" fill="#133E2B" text-anchor="middle">Siyams</text>
-                            <path d="M100 125 C98 122 93 122 93 126 C93 129 100 134 100 134 C100 134 107 129 107 126 C107 122 102 122 100 125 Z" fill="#D4AF37"/>
-                            <text x="100" y="152" font-family="'Cinzel', serif" font-size="9" font-weight="700" fill="#133E2B" text-anchor="middle" letter-spacing="1">GREAT PRODUCTS</text>
-                            <text x="100" y="163" font-family="'Cinzel', serif" font-size="8" font-weight="700" fill="#D4AF37" text-anchor="middle" letter-spacing="1">GREAT PRICES</text>
-                        </svg>
+                        <span class="font-script text-3xl text-goldBrand">S</span>
                     </div>
-                    <div class="hidden sm:block">
+                    <div>
                         <span class="font-serif text-xl sm:text-2xl font-bold tracking-wider text-emeraldBrand-800 block leading-none">SIYAMS <span class="text-xs font-sans text-goldBrand-dark font-semibold tracking-widest block mt-1">LLC</span></span>
-                        <span class="text-[10px] font-sans tracking-widest text-gray-500 uppercase">Luxury Boutique</span>
+                        <span class="text-[10px] font-sans tracking-widest text-gray-500 uppercase">Luxury Collection</span>
                     </div>
                 </a>
 
-                <!-- Navigation Tabs -->
-                <nav class="hidden md:flex space-x-8 text-sm font-semibold text-emeraldBrand-800">
-                    <a href="#catalog" class="hover:text-goldBrand transition-colors">Catalog</a>
-                    <a href="#korean-bags" class="hover:text-goldBrand transition-colors flex items-center gap-1.5">
-                        <span class="w-2 h-2 rounded-full bg-blushPink-500"></span>
-                        Korean Bags
-                    </a>
-                    <a href="#jewelry" class="hover:text-goldBrand transition-colors">Fine Jewelry</a>
-                    <a href="#fragrance" class="hover:text-goldBrand transition-colors">Areej Fragrances</a>
-                    <a href="#about" class="hover:text-goldBrand transition-colors">About Us</a>
-                </nav>
-
-                <!-- Quick Action Buttons -->
                 <div class="flex items-center gap-3">
                     <a href="tel:6789839010" class="hidden sm:flex items-center gap-2 px-3 py-2 rounded-full border border-emeraldBrand-800/30 text-emeraldBrand-800 hover:bg-emeraldBrand-800 hover:text-white transition-all text-xs font-semibold">
                         <i class="fa-solid fa-phone text-goldBrand"></i>
                         <span>678-983-9010</span>
                     </a>
 
-                    <a href="https://wa.me/16789839010?text=Hello%20Siyams%20LLC,%20I%20would%20like%20to%20inquire%20about%20your%20products." target="_blank" class="flex items-center gap-2 bg-emeraldBrand-800 hover:bg-emeraldBrand-900 text-white px-4 py-2.5 rounded-full text-xs font-bold tracking-wider uppercase shadow-md hover:shadow-lg transition-all duration-300 ring-2 ring-goldBrand/40">
+                    <a href="https://wa.me/16789839010?text=Hello%20Siyams%20LLC,%20I%20would%20like%20to%20place%20an%20order." target="_blank" class="flex items-center gap-2 bg-emeraldBrand-800 hover:bg-emeraldBrand-900 text-white px-4 py-2.5 rounded-full text-xs font-bold tracking-wider uppercase shadow-md transition-all ring-2 ring-goldBrand/40">
                         <i class="fa-brands fa-whatsapp text-lg text-emerald-400"></i>
                         <span>Order Now</span>
                     </a>
@@ -164,221 +104,132 @@
 
     <!-- HERO SECTION -->
     <section class="relative py-12 lg:py-16 overflow-hidden z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+            <div class="inline-flex items-center gap-2 bg-emeraldBrand-800/10 border border-goldBrand/40 px-4 py-1.5 rounded-full text-emeraldBrand-800 text-xs sm:text-sm font-semibold">
+                <i class="fa-solid fa-crown text-goldBrand"></i>
+                <span>Official Siyams LLC Boutique</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-emeraldBrand-900 leading-tight">
+                Great Products, <br>
+                <span class="gold-gradient-text italic font-script text-5xl sm:text-6xl lg:text-7xl">Great Prices</span>
+            </h1>
+
+            <p class="text-gray-600 max-w-xl mx-auto text-sm sm:text-base">
+                Discover our exclusive luxury collection: Fine Jewelry, Areej Perfumes, Cozy Blankets, Stylish Bags & Shoes.
+            </p>
+        </div>
+    </section>
+
+    <!-- CATEGORY FILTER BAR -->
+    <section id="catalog" class="py-4 bg-emeraldBrand-800 text-creamBrand-100 sticky top-20 sm:top-24 z-40 shadow-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                
-                <!-- Hero Left Content -->
-                <div class="lg:col-span-7 text-center lg:text-left space-y-6">
-                    <div class="inline-flex items-center gap-2 bg-emeraldBrand-800/10 border border-goldBrand/40 px-4 py-1.5 rounded-full text-emeraldBrand-800 text-xs sm:text-sm font-semibold">
-                        <i class="fa-solid fa-crown text-goldBrand"></i>
-                        <span>Official Siyams LLC Boutique</span>
-                    </div>
-
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-emeraldBrand-900 leading-tight">
-                        Great Products, <br>
-                        <span class="gold-gradient-text italic font-script text-5xl sm:text-6xl lg:text-7xl">Great Prices</span>
-                    </h1>
-
-                    <!-- CTAs -->
-                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
-                        <a href="#catalog" class="bg-emeraldBrand-800 hover:bg-emeraldBrand-900 text-creamBrand-100 font-bold px-8 py-3.5 rounded-full shadow-xl hover:shadow-2xl border border-goldBrand transition-all transform hover:-translate-y-0.5 flex items-center gap-3">
-                            <span>Browse Catalog</span>
-                            <i class="fa-solid fa-arrow-right text-goldBrand"></i>
-                        </a>
-
-                        <button onclick="openInquiryModal('General Catalog')" class="bg-white hover:bg-creamBrand-200 text-emeraldBrand-800 font-bold px-6 py-3.5 rounded-full border border-emeraldBrand-800/30 shadow-sm transition-all flex items-center gap-2">
-                            <i class="fa-regular fa-paper-plane text-emeraldBrand-800"></i>
-                            <span>Send Quick Inquiry</span>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Hero Right: Logo Emblem Showcase Card -->
-                <div class="lg:col-span-5 flex justify-center">
-                    <div class="relative w-full max-w-md bg-white p-6 sm:p-8 rounded-3xl shadow-2xl border-2 border-goldBrand/40 shimmer-effect text-center space-y-6">
-                        <div class="absolute top-3 left-3 text-goldBrand opacity-40"><i class="fa-solid fa-fan"></i></div>
-                        <div class="absolute top-3 right-3 text-goldBrand opacity-40"><i class="fa-solid fa-fan"></i></div>
-
-                        <div class="relative mx-auto w-64 h-64 sm:w-72 sm:h-72 rounded-full p-2 bg-gradient-to-tr from-emeraldBrand-800 via-emeraldBrand-500 to-goldBrand shadow-xl flex items-center justify-center">
-                            <div class="w-full h-full rounded-full bg-creamBrand-100 flex flex-col items-center justify-center p-4 relative border-4 border-emeraldBrand-800">
-                                
-                                <svg class="absolute inset-0 w-full h-full opacity-10 text-emeraldBrand-800 pointer-events-none" fill="currentColor" viewBox="0 0 100 100">
-                                    <path d="M20 20 Q50 0 80 20 Q100 50 80 80 Q50 100 20 80 Q0 50 20 20 Z"/>
-                                </svg>
-
-                                <svg class="w-12 h-12 text-goldBrand mb-1 animate-bounce" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12,2C12,2 10.5,6.5 8,8C5.5,9.5 2,8 2,12C2,16 6,17.5 8,16C10,14.5 11.5,13 12,13C12.5,13 14,14.5 16,16C18,17.5 22,16 22,12C22,8 18.5,9.5 16,8C13.5,6.5 12,2 12,2Z"/>
-                                </svg>
-
-                                <h2 class="font-script text-5xl sm:text-6xl text-emeraldBrand-800 leading-none">Siyams</h2>
-                                <div class="w-16 h-0.5 bg-goldBrand my-1 rounded-full"></div>
-                                <p class="font-serif text-[10px] sm:text-xs font-bold text-emeraldBrand-900 tracking-widest uppercase">Great Products</p>
-                                <p class="font-serif text-[9px] sm:text-[10px] font-bold text-goldBrand-dark tracking-widest uppercase">Great Prices</p>
-                                
-                                <div class="mt-2 flex items-center gap-1 text-goldBrand text-xs">
-                                    <i class="fa-solid fa-heart"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="pt-2 flex items-center justify-center gap-3">
-                            <a href="mailto:Siyams4626@gmail.com" class="text-xs font-semibold text-emeraldBrand-800 hover:text-goldBrand transition-colors bg-creamBrand-200 px-4 py-2 rounded-full border border-goldBrand/30">
-                                <i class="fa-regular fa-envelope mr-1 text-goldBrand"></i> Siyams4626@gmail.com
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
+            <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs sm:text-sm">
+                <button onclick="filterCategory('all')" id="btn-all" class="category-btn active bg-goldBrand text-emeraldBrand-900 font-bold px-4 py-2 rounded-full transition-all shadow">
+                    All Items
+                </button>
+                <button onclick="filterCategory('jewelry')" id="btn-jewelry" class="category-btn bg-emeraldBrand-900/60 hover:bg-goldBrand hover:text-emeraldBrand-900 text-creamBrand-100 font-semibold px-4 py-2 rounded-full border border-goldBrand/30 transition-all">
+                    Fine Jewelry
+                </button>
+                <button onclick="filterCategory('perfumes')" id="btn-perfumes" class="category-btn bg-emeraldBrand-900/60 hover:bg-goldBrand hover:text-emeraldBrand-900 text-creamBrand-100 font-semibold px-4 py-2 rounded-full border border-goldBrand/30 transition-all">
+                    Areej Perfumes
+                </button>
+                <button onclick="filterCategory('blankets')" id="btn-blankets" class="category-btn bg-emeraldBrand-900/60 hover:bg-goldBrand hover:text-emeraldBrand-900 text-creamBrand-100 font-semibold px-4 py-2 rounded-full border border-goldBrand/30 transition-all">
+                    Blankets
+                </button>
+                <button onclick="filterCategory('bags')" id="btn-bags" class="category-btn bg-emeraldBrand-900/60 hover:bg-goldBrand hover:text-emeraldBrand-900 text-creamBrand-100 font-semibold px-4 py-2 rounded-full border border-goldBrand/30 transition-all">
+                    Luxury Bags
+                </button>
+                <button onclick="filterCategory('shoes')" id="btn-shoes" class="category-btn bg-emeraldBrand-900/60 hover:bg-goldBrand hover:text-emeraldBrand-900 text-creamBrand-100 font-semibold px-4 py-2 rounded-full border border-goldBrand/30 transition-all">
+                    Shoes
+                </button>
             </div>
         </div>
     </section>
 
-    <!-- FILTER BAR -->
-    <section id="catalog" class="py-6 bg-emeraldBrand-800 text-creamBrand-100 sticky top-20 sm:top-24 z-40 shadow-md">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-                <div class="flex items-center gap-2">
-                    <i class="fa-solid fa-filter text-goldBrand"></i>
-                    <span class="font-serif font-bold text-sm tracking-wider uppercase text-goldBrand-light">Filter Showcase:</span>
-                </div>
-
-                <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs sm:text-sm">
-                    <button onclick="filterCategory('all')" id="btn-all" class="category-btn active bg-goldBrand text-emeraldBrand-900 font-bold px-4 py-2 rounded-full transition-all shadow">
-                        All Items
-                    </button>
-                    <button onclick="filterCategory('korean-bags')" id="btn-korean-bags" class="category-btn bg-emeraldBrand-900/60 hover:bg-goldBrand hover:text-emeraldBrand-900 text-creamBrand-100 font-semibold px-4 py-2 rounded-full border border-goldBrand/30 transition-all">
-                        Korean Bags
-                    </button>
-                    <button onclick="filterCategory('jewelry')" id="btn-jewelry" class="category-btn bg-emeraldBrand-900/60 hover:bg-goldBrand hover:text-emeraldBrand-900 text-creamBrand-100 font-semibold px-4 py-2 rounded-full border border-goldBrand/30 transition-all">
-                        Fine Jewelry
-                    </button>
-                    <button onclick="filterCategory('fragrance')" id="btn-fragrance" class="category-btn bg-emeraldBrand-900/60 hover:bg-goldBrand hover:text-emeraldBrand-900 text-creamBrand-100 font-semibold px-4 py-2 rounded-full border border-goldBrand/30 transition-all">
-                        Areej Perfumes
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CATALOG SHOWCASE -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
-
-        <!-- PRODUCT GRID -->
+    <!-- PRODUCT GRID -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
-            <!-- ITEM 1 -->
-            <div class="product-card glass-card rounded-3xl overflow-hidden shadow-lg border border-goldBrand/30 flex flex-col justify-between hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1" data-category="korean-bags">
-                <div class="relative">
-                    <div class="h-64 sm:h-72 bg-emeraldBrand-900/5 relative overflow-hidden flex items-center justify-center p-4">
-                        <svg class="w-full h-full max-h-56 text-emeraldBrand-800" viewBox="0 0 300 250" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="50" y="80" width="200" height="140" rx="20" fill="#133E2B" stroke="#D4AF37" stroke-width="3"/>
-                            <path d="M50 110 L250 110" stroke="#D4AF37" stroke-width="1.5" stroke-dasharray="4 4"/>
-                            <path d="M50 140 L250 140" stroke="#D4AF37" stroke-width="1.5" stroke-dasharray="4 4"/>
-                            <path d="M100 80 C100 30 200 30 200 80" stroke="#D4AF37" stroke-width="8" stroke-linecap="round" fill="none"/>
-                            <circle cx="150" cy="140" r="14" fill="#D4AF37"/>
-                        </svg>
-                    </div>
+            <!-- 1. JEWELRY -->
+            <div class="product-card glass-card rounded-3xl overflow-hidden shadow-lg border border-goldBrand/30 flex flex-col justify-between hover:shadow-2xl transition-all duration-300" data-category="jewelry">
+                <div class="relative h-64 sm:h-72 overflow-hidden bg-gray-100">
+                    <img src="mon-bijou.jpg" alt="Fine Jewelry" class="w-full h-full object-cover">
                 </div>
                 <div class="p-6 flex items-center justify-between border-t border-goldBrand/20">
-                    <span class="text-base font-serif font-bold text-emeraldBrand-900">Korean Style Bag</span>
-                    <a href="https://wa.me/16789839010?text=Hello,%20I%20am%20interested%20in%20ordering%20this%20item." target="_blank" class="bg-emeraldBrand-800 hover:bg-emeraldBrand-900 text-white px-6 py-2.5 rounded-full text-xs font-bold transition-all flex items-center gap-2 shadow">
+                    <div>
+                        <span class="text-xs font-bold text-goldBrand-dark uppercase tracking-wider block">Fine Jewelry</span>
+                        <span class="text-base font-serif font-bold text-emeraldBrand-900">Luxury Gold Jewelry</span>
+                    </div>
+                    <a href="https://wa.me/16789839010?text=Hello%20Siyams%20LLC,%20I%20am%20interested%20in%20your%20Jewelry." target="_blank" class="bg-emeraldBrand-800 hover:bg-emeraldBrand-900 text-white px-5 py-2.5 rounded-full text-xs font-bold transition-all flex items-center gap-2">
                         <i class="fa-brands fa-whatsapp text-emerald-400"></i>
                         <span>Order</span>
                     </a>
                 </div>
             </div>
 
-            <!-- ITEM 2 -->
-            <div class="product-card glass-card rounded-3xl overflow-hidden shadow-lg border border-goldBrand/30 flex flex-col justify-between hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1" data-category="fragrance">
-                <div class="relative">
-                    <div class="h-64 sm:h-72 bg-emeraldBrand-900/5 relative overflow-hidden flex items-center justify-center p-4">
-                        <svg class="w-full h-full max-h-60" viewBox="0 0 300 250" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="70" y="80" width="65" height="130" rx="15" fill="#581C1C" stroke="#D4AF37" stroke-width="2"/>
-                            <circle cx="102" cy="50" r="25" fill="#D4AF37"/>
-                            <rect x="165" y="80" width="65" height="130" rx="15" fill="#3B0764" stroke="#D4AF37" stroke-width="2"/>
-                            <circle cx="197" cy="50" r="25" fill="#D4AF37"/>
-                        </svg>
-                    </div>
+            <!-- 2. BLANKET -->
+            <div class="product-card glass-card rounded-3xl overflow-hidden shadow-lg border border-goldBrand/30 flex flex-col justify-between hover:shadow-2xl transition-all duration-300" data-category="blankets">
+                <div class="relative h-64 sm:h-72 overflow-hidden bg-gray-100">
+                    <img src="blanket.jpg" alt="Luxury Blanket" class="w-full h-full object-cover">
                 </div>
                 <div class="p-6 flex items-center justify-between border-t border-goldBrand/20">
-                    <span class="text-base font-serif font-bold text-emeraldBrand-900">Areej Perfumes</span>
-                    <a href="https://wa.me/16789839010?text=Hello,%20I%20am%20interested%20in%20ordering%20this%20item." target="_blank" class="bg-emeraldBrand-800 hover:bg-emeraldBrand-900 text-white px-6 py-2.5 rounded-full text-xs font-bold transition-all flex items-center gap-2 shadow">
+                    <div>
+                        <span class="text-xs font-bold text-goldBrand-dark uppercase tracking-wider block">Home & Comfort</span>
+                        <span class="text-base font-serif font-bold text-emeraldBrand-900">Luxury Home Blanket</span>
+                    </div>
+                    <a href="https://wa.me/16789839010?text=Hello%20Siyams%20LLC,%20I%20am%20interested%20in%20your%20Blanket." target="_blank" class="bg-emeraldBrand-800 hover:bg-emeraldBrand-900 text-white px-5 py-2.5 rounded-full text-xs font-bold transition-all flex items-center gap-2">
                         <i class="fa-brands fa-whatsapp text-emerald-400"></i>
                         <span>Order</span>
                     </a>
                 </div>
             </div>
 
-            <!-- ITEM 3 -->
-            <div class="product-card glass-card rounded-3xl overflow-hidden shadow-lg border border-goldBrand/30 flex flex-col justify-between hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1" data-category="jewelry">
-                <div class="relative">
-                    <div class="h-64 sm:h-72 bg-emeraldBrand-900/5 relative overflow-hidden flex items-center justify-center p-4">
-                        <svg class="w-full h-full max-h-56 text-goldBrand" viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="125" cy="125" r="75" stroke="#D4AF37" stroke-width="8" stroke-dasharray="12 6" fill="none"/>
-                            <circle cx="60" cy="125" r="10" fill="#D4AF37"/>
-                            <circle cx="190" cy="125" r="10" fill="#D4AF37"/>
-                        </svg>
-                    </div>
+            <!-- 3. SHOES -->
+            <div class="product-card glass-card rounded-3xl overflow-hidden shadow-lg border border-goldBrand/30 flex flex-col justify-between hover:shadow-2xl transition-all duration-300" data-category="shoes">
+                <div class="relative h-64 sm:h-72 overflow-hidden bg-gray-100">
+                    <img src="chaussure.jpg" alt="Luxury Shoes" class="w-full h-full object-cover">
                 </div>
                 <div class="p-6 flex items-center justify-between border-t border-goldBrand/20">
-                    <span class="text-base font-serif font-bold text-emeraldBrand-900">Fine Jewelry</span>
-                    <a href="https://wa.me/16789839010?text=Hello,%20I%20am%20interested%20in%20ordering%20this%20item." target="_blank" class="bg-emeraldBrand-800 hover:bg-emeraldBrand-900 text-white px-6 py-2.5 rounded-full text-xs font-bold transition-all flex items-center gap-2 shadow">
+                    <div>
+                        <span class="text-xs font-bold text-goldBrand-dark uppercase tracking-wider block">Fashion Footwear</span>
+                        <span class="text-base font-serif font-bold text-emeraldBrand-900">Stylish Luxury Shoes</span>
+                    </div>
+                    <a href="https://wa.me/16789839010?text=Hello%20Siyams%20LLC,%20I%20am%20interested%20in%20your%20Shoes." target="_blank" class="bg-emeraldBrand-800 hover:bg-emeraldBrand-900 text-white px-5 py-2.5 rounded-full text-xs font-bold transition-all flex items-center gap-2">
                         <i class="fa-brands fa-whatsapp text-emerald-400"></i>
                         <span>Order</span>
                     </a>
                 </div>
             </div>
 
-            <!-- ITEM 4 -->
-            <div class="product-card glass-card rounded-3xl overflow-hidden shadow-lg border border-goldBrand/30 flex flex-col justify-between hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1" data-category="jewelry">
-                <div class="relative">
-                    <div class="h-64 sm:h-72 bg-emeraldBrand-900/5 relative overflow-hidden flex items-center justify-center p-4">
-                        <svg class="w-full h-full max-h-56" viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M40 70 C 80 200, 170 200, 210 70" stroke="#D4AF37" stroke-width="3" fill="none"/>
-                            <polygon points="100,150 103,158 111,158 105,163 107,171 100,166 93,171 95,163 89,158 97,158" fill="#D4AF37"/>
-                        </svg>
-                    </div>
+            <!-- 4. PERFUME -->
+            <div class="product-card glass-card rounded-3xl overflow-hidden shadow-lg border border-goldBrand/30 flex flex-col justify-between hover:shadow-2xl transition-all duration-300" data-category="perfumes">
+                <div class="relative h-64 sm:h-72 overflow-hidden bg-gray-100">
+                    <img src="parfum.jpg" alt="Areej Perfume" class="w-full h-full object-cover">
                 </div>
                 <div class="p-6 flex items-center justify-between border-t border-goldBrand/20">
-                    <span class="text-base font-serif font-bold text-emeraldBrand-900">Charm Necklace</span>
-                    <a href="https://wa.me/16789839010?text=Hello,%20I%20am%20interested%20in%20ordering%20this%20item." target="_blank" class="bg-emeraldBrand-800 hover:bg-emeraldBrand-900 text-white px-6 py-2.5 rounded-full text-xs font-bold transition-all flex items-center gap-2 shadow">
+                    <div>
+                        <span class="text-xs font-bold text-goldBrand-dark uppercase tracking-wider block">Fragrances & Sprays</span>
+                        <span class="text-base font-serif font-bold text-emeraldBrand-900">Areej Luxury Perfumes</span>
+                    </div>
+                    <a href="https://wa.me/16789839010?text=Hello%20Siyams%20LLC,%20I%20am%20interested%20in%20your%20Perfumes." target="_blank" class="bg-emeraldBrand-800 hover:bg-emeraldBrand-900 text-white px-5 py-2.5 rounded-full text-xs font-bold transition-all flex items-center gap-2">
                         <i class="fa-brands fa-whatsapp text-emerald-400"></i>
                         <span>Order</span>
                     </a>
                 </div>
             </div>
 
-            <!-- ITEM 5 -->
-            <div class="product-card glass-card rounded-3xl overflow-hidden shadow-lg border border-goldBrand/30 flex flex-col justify-between hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1" data-category="jewelry">
-                <div class="relative">
-                    <div class="h-64 sm:h-72 bg-emeraldBrand-900/5 relative overflow-hidden flex items-center justify-center p-4">
-                        <svg class="w-full h-full max-h-56" viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="125" cy="125" r="70" stroke="#D4AF37" stroke-width="4" stroke-dasharray="16 8" fill="none"/>
-                        </svg>
-                    </div>
+            <!-- 5. BAG -->
+            <div class="product-card glass-card rounded-3xl overflow-hidden shadow-lg border border-goldBrand/30 flex flex-col justify-between hover:shadow-2xl transition-all duration-300" data-category="bags">
+                <div class="relative h-64 sm:h-72 overflow-hidden bg-gray-100">
+                    <img src="sac.jpg" alt="Luxury Bag" class="w-full h-full object-cover">
                 </div>
                 <div class="p-6 flex items-center justify-between border-t border-goldBrand/20">
-                    <span class="text-base font-serif font-bold text-emeraldBrand-900">Gold Chain</span>
-                    <a href="https://wa.me/16789839010?text=Hello,%20I%20am%20interested%20in%20ordering%20this%20item." target="_blank" class="bg-emeraldBrand-800 hover:bg-emeraldBrand-900 text-white px-6 py-2.5 rounded-full text-xs font-bold transition-all flex items-center gap-2 shadow">
-                        <i class="fa-brands fa-whatsapp text-emerald-400"></i>
-                        <span>Order</span>
-                    </a>
-                </div>
-            </div>
-
-            <!-- ITEM 6 -->
-            <div class="product-card glass-card rounded-3xl overflow-hidden shadow-lg border border-goldBrand/30 flex flex-col justify-between hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1" data-category="jewelry">
-                <div class="relative">
-                    <div class="h-64 sm:h-72 bg-emeraldBrand-900/5 relative overflow-hidden flex items-center justify-center p-4">
-                        <svg class="w-full h-full max-h-56" viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="85" cy="85" r="22" stroke="#D4AF37" stroke-width="6" fill="none"/>
-                            <circle cx="170" cy="85" r="22" stroke="#D4AF37" stroke-width="8" stroke-dasharray="4 2" fill="none"/>
-                        </svg>
+                    <div>
+                        <span class="text-xs font-bold text-goldBrand-dark uppercase tracking-wider block">Handbags & Leather</span>
+                        <span class="text-base font-serif font-bold text-emeraldBrand-900">Luxury Style Bag</span>
                     </div>
-                </div>
-                <div class="p-6 flex items-center justify-between border-t border-goldBrand/20">
-                    <span class="text-base font-serif font-bold text-emeraldBrand-900">Hoop Earrings</span>
-                    <a href="https://wa.me/16789839010?text=Hello,%20I%20am%20interested%20in%20ordering%20this%20item." target="_blank" class="bg-emeraldBrand-800 hover:bg-emeraldBrand-900 text-white px-6 py-2.5 rounded-full text-xs font-bold transition-all flex items-center gap-2 shadow">
+                    <a href="https://wa.me/16789839010?text=Hello%20Siyams%20LLC,%20I%20am%20interested%20in%20your%20Bags." target="_blank" class="bg-emeraldBrand-800 hover:bg-emeraldBrand-900 text-white px-5 py-2.5 rounded-full text-xs font-bold transition-all flex items-center gap-2">
                         <i class="fa-brands fa-whatsapp text-emerald-400"></i>
                         <span>Order</span>
                     </a>
@@ -388,129 +239,17 @@
         </div>
     </main>
 
-    <!-- ABOUT SECTION -->
-    <section id="about" class="bg-emeraldBrand-800 text-creamBrand-100 py-16 border-y-2 border-goldBrand relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                
-                <div class="space-y-6">
-                    <span class="text-goldBrand font-serif text-xs font-bold uppercase tracking-widest block">About Siyams LLC</span>
-                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white leading-tight">
-                        Authentic Quality, Elegance, <br>
-                        & Unmatched Value
-                    </h2>
-                    <p class="text-creamBrand-200 text-base sm:text-lg leading-relaxed">
-                        At Siyams LLC, we are committed to providing high-end jewelry, air fresheners, perfumes, bags and shoes and earrings at an unbeatable price and with fast order processing.
-                    </p>
-                </div>
-
-                <!-- Contact Card -->
-                <div class="bg-creamBrand-100 text-gray-800 p-8 rounded-3xl border-2 border-goldBrand shadow-2xl space-y-6">
-                    <div class="text-center space-y-1">
-                        <h3 class="font-serif text-2xl font-bold text-emeraldBrand-900">Direct Contact Center</h3>
-                        <p class="text-xs text-gray-500">Reach out to us anytime for instant stock updates</p>
-                    </div>
-
-                    <div class="space-y-4 text-sm">
-                        <a href="tel:6789839010" class="flex items-center gap-4 p-4 rounded-2xl bg-white border border-goldBrand/30 hover:border-emeraldBrand-800 transition-all shadow-sm">
-                            <div class="w-10 h-10 rounded-full bg-emeraldBrand-800/10 flex items-center justify-center text-emeraldBrand-800 font-bold shrink-0">
-                                <i class="fa-solid fa-phone text-goldBrand"></i>
-                            </div>
-                            <div>
-                                <span class="text-xs text-gray-500 block">Phone Number</span>
-                                <span class="font-bold text-emeraldBrand-900 text-base">678-983-9010</span>
-                            </div>
-                        </a>
-
-                        <a href="mailto:Siyams4626@gmail.com" class="flex items-center gap-4 p-4 rounded-2xl bg-white border border-goldBrand/30 hover:border-emeraldBrand-800 transition-all shadow-sm">
-                            <div class="w-10 h-10 rounded-full bg-emeraldBrand-800/10 flex items-center justify-center text-emeraldBrand-800 font-bold shrink-0">
-                                <i class="fa-solid fa-envelope text-goldBrand"></i>
-                            </div>
-                            <div>
-                                <span class="text-xs text-gray-500 block">Email Address</span>
-                                <span class="font-bold text-emeraldBrand-900 text-sm sm:text-base">Siyams4626@gmail.com</span>
-                            </div>
-                        </a>
-                    </div>
-
-                    <button onclick="openInquiryModal('Direct Store Contact')" class="w-full bg-emeraldBrand-800 hover:bg-emeraldBrand-900 text-white font-bold py-3.5 rounded-full text-xs uppercase tracking-wider shadow-lg border border-goldBrand transition-all">
-                        Open Quick Message Modal
-                    </button>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
     <!-- FOOTER -->
-    <footer class="bg-emeraldBrand-900 text-creamBrand-300 py-12 border-t border-goldBrand/30 text-xs">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-                
-                <div class="space-y-2">
-                    <div class="flex items-center justify-center md:justify-start gap-2">
-                        <span class="font-serif text-xl font-bold text-white tracking-widest">SIYAMS <span class="text-goldBrand">LLC</span></span>
-                    </div>
-                    <p class="text-gray-400">Great Products, Great Prices • Premium Boutique</p>
-                </div>
-
-                <div class="flex flex-wrap justify-center gap-6 text-gray-300">
-                    <a href="tel:6789839010" class="hover:text-goldBrand transition-colors"><i class="fa-solid fa-phone mr-1.5 text-goldBrand"></i>678-983-9010</a>
-                    <a href="mailto:Siyams4626@gmail.com" class="hover:text-goldBrand transition-colors"><i class="fa-solid fa-envelope mr-1.5 text-goldBrand"></i>Siyams4626@gmail.com</a>
-                </div>
-
-                <div class="text-gray-500">
-                    &copy; 2026 Siyams LLC. All Rights Reserved.
-                </div>
-
-            </div>
-        </div>
+    <footer class="bg-emeraldBrand-900 text-creamBrand-300 py-8 border-t border-goldBrand/30 text-xs text-center">
+        <p class="font-serif text-lg text-white font-bold mb-1">SIYAMS LLC</p>
+        <p class="text-gray-400">Phone: 678-983-9010 | Email: Siyams4626@gmail.com</p>
+        <p class="text-gray-500 mt-4">&copy; 2026 Siyams LLC. All Rights Reserved.</p>
     </footer>
 
-    <!-- WHATSAPP FLOATING BUTTON -->
-    <a href="https://wa.me/16789839010?text=Hello%20Siyams%20LLC,%20I%20have%20a%20question%20about%20your%20products." target="_blank" class="fixed bottom-6 right-6 z-50 bg-emerald-600 hover:bg-emerald-700 text-white p-4 rounded-full shadow-2xl flex items-center justify-center border-2 border-white ring-4 ring-emerald-500/30 transition-all transform hover:scale-110" title="Quick WhatsApp Order">
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/16789839010" target="_blank" class="fixed bottom-6 right-6 z-50 bg-emerald-600 text-white p-4 rounded-full shadow-2xl flex items-center justify-center border-2 border-white ring-4 ring-emerald-500/30">
         <i class="fa-brands fa-whatsapp text-3xl"></i>
     </a>
-
-    <!-- INQUIRY MODAL -->
-    <div id="inquiry-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 hidden">
-        <div class="bg-creamBrand-100 rounded-3xl max-w-md w-full p-6 sm:p-8 border-2 border-goldBrand shadow-2xl relative space-y-4">
-            <button onclick="closeInquiryModal()" class="absolute top-4 right-4 text-gray-400 hover:text-emeraldBrand-800 text-xl font-bold">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-
-            <div class="text-center space-y-1">
-                <div class="w-12 h-12 rounded-full bg-emeraldBrand-800 text-goldBrand mx-auto flex items-center justify-center text-xl mb-2">
-                    <i class="fa-regular fa-paper-plane"></i>
-                </div>
-                <h3 class="font-serif text-xl font-bold text-emeraldBrand-900">Send Direct Inquiry</h3>
-                <p id="modal-product-title" class="text-xs text-goldBrand-dark font-semibold">General Item Inquiry</p>
-            </div>
-
-            <form onsubmit="handleInquirySubmit(event)" class="space-y-3 text-xs">
-                <div>
-                    <label class="block text-gray-700 font-bold mb-1">Your Full Name</label>
-                    <input type="text" id="inquiry-name" required placeholder="Jane Doe" class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:border-emeraldBrand-800 focus:outline-none">
-                </div>
-                <div>
-                    <label class="block text-gray-700 font-bold mb-1">Phone Number / WhatsApp</label>
-                    <input type="tel" id="inquiry-phone" required placeholder="(678) 000-0000" class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:border-emeraldBrand-800 focus:outline-none">
-                </div>
-                <div>
-                    <label class="block text-gray-700 font-bold mb-1">Message / Preference</label>
-                    <textarea id="inquiry-message" rows="3" required placeholder="I would like to order..." class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:border-emeraldBrand-800 focus:outline-none"></textarea>
-                </div>
-
-                <div id="form-feedback" class="text-center text-xs font-bold text-emerald-700 hidden py-1">
-                    <i class="fa-solid fa-circle-check mr-1"></i> Inquiry sent successfully! We will contact you shortly.
-                </div>
-
-                <button type="submit" class="w-full bg-emeraldBrand-800 hover:bg-emeraldBrand-900 text-white font-bold py-3 rounded-full uppercase tracking-wider shadow-md transition-all">
-                    Send Inquiry
-                </button>
-            </form>
-        </div>
-    </div>
 
     <script>
         function filterCategory(category) {
@@ -535,26 +274,6 @@
                     card.style.display = 'none';
                 }
             });
-        }
-
-        function openInquiryModal(productName) {
-            document.getElementById('modal-product-title').innerText = productName;
-            document.getElementById('inquiry-modal').classList.remove('hidden');
-        }
-
-        function closeInquiryModal() {
-            document.getElementById('inquiry-modal').classList.add('hidden');
-            document.getElementById('form-feedback').classList.add('hidden');
-        }
-
-        function handleInquirySubmit(event) {
-            event.preventDefault();
-            const feedback = document.getElementById('form-feedback');
-            feedback.classList.remove('hidden');
-
-            setTimeout(() => {
-                closeInquiryModal();
-            }, 2000);
         }
     </script>
 
